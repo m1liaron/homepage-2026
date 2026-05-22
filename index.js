@@ -24,3 +24,17 @@ document.addEventListener("mousedown", () => {
 document.addEventListener("mouseup", () => {
   ring.style.opacity = ".6";
 });
+
+// ── Reveal on scroll ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+
+document
+  .querySelectorAll(".reveal, .reveal-left, .reveal-right")
+  .forEach((el) => observer.observe(el));
