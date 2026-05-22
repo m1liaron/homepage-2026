@@ -38,3 +38,19 @@ const observer = new IntersectionObserver((entries) => {
 document
   .querySelectorAll(".reveal, .reveal-left, .reveal-right")
   .forEach((el) => observer.observe(el));
+
+  // ── Skill bars ──
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+          setTimeout(() => {
+            bar.style.width = bar.dataset.pct + '%';
+          }, 200);
+        });
+        barObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: .3 });
+
+  document.querySelectorAll('#skills').forEach(el => barObserver.observe(el));
