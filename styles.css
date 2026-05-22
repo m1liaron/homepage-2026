@@ -467,6 +467,103 @@ section {
     animation: fade-up .8s .3s forwards;
 }
 
+/* Skills */
+
+ #skills {
+     background: var(--bg);
+ }
+
+ .skills-layout {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 3rem 4rem;
+ }
+
+ .skill-group-title {
+     font-family: var(--mono);
+     font-size: 10px;
+     letter-spacing: .2em;
+     text-transform: uppercase;
+     color: var(--gold);
+     margin-bottom: 1.5rem;
+     padding-bottom: .75rem;
+     border-bottom: 1px solid var(--line);
+ }
+
+ .skill-item {
+     margin-bottom: 1.1rem;
+ }
+
+ .skill-header {
+     display: flex;
+     justify-content: space-between;
+     align-items: baseline;
+     margin-bottom: .4rem;
+ }
+
+ .skill-name {
+     font-size: 13px;
+     color: var(--text);
+     font-family: var(--sans);
+ }
+
+ .skill-pct {
+     font-family: var(--mono);
+     font-size: 10px;
+     color: var(--muted);
+     letter-spacing: .05em;
+ }
+
+ .skill-bar-bg {
+     height: 2px;
+     background: var(--line);
+     position: relative;
+     overflow: visible;
+ }
+
+ .skill-bar-fill {
+     height: 100%;
+     width: 0;
+     background: linear-gradient(90deg, var(--gold-dim), var(--accent));
+     transition: width 1.2s cubic-bezier(.16, 1, .3, 1);
+     position: relative;
+ }
+
+ .skill-bar-fill::after {
+     content: '';
+     position: absolute;
+     right: -2px;
+     top: -2px;
+     width: 6px;
+     height: 6px;
+     background: var(--accent);
+     border-radius: 50%;
+ }
+
+ /* Pill skills */
+ .pill-list {
+     display: flex;
+     flex-wrap: wrap;
+     gap: .5rem;
+     margin-top: .75rem;
+ }
+
+ .pill {
+     font-family: var(--mono);
+     font-size: 11px;
+     padding: .3rem .9rem;
+     border: 1px solid var(--line);
+     color: var(--muted);
+     border-radius: 2rem;
+     transition: border-color .3s, color .3s;
+     cursor: default;
+ }
+
+ .pill:hover {
+     border-color: var(--gold-dim);
+     color: var(--accent);
+ }
+
 /* Intro and Skills */
 .intro {
     display: flex;
@@ -600,3 +697,54 @@ section {
     color: var(--secondary-text-color);
 }
 
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    nav {
+        display: none;
+    }
+
+    body {
+        cursor: auto;
+    }
+
+    #cursor,
+    #cursor-ring {
+        display: none;
+    }
+
+    .hero-number {
+        display: none;
+    }
+
+    .about-grid,
+    .skills-layout,
+    .extra-grid,
+    .edu-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .exp-item {
+        grid-template-columns: 1fr;
+    }
+
+    .exp-meta {
+        padding-bottom: .5rem;
+    }
+
+    .exp-number {
+        display: none;
+    }
+
+    .hero-bar {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .hero-contacts {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+}
