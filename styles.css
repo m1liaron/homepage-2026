@@ -35,6 +35,10 @@ body {
     cursor: none;
 }
 
+a {
+    color: var(--accent)
+}
+
 /* ── Custom cursor ── */
 #cursor {
     position: fixed;
@@ -601,6 +605,95 @@ section {
     color: var(--secondary-text-color);
     text-align: justify;
 }
+
+/* Experience */
+
+ ───────────────────────────── */ #experience {
+     background: var(--bg2);
+ }
+
+ .exp-list {
+     display: flex;
+     flex-direction: column;
+ }
+
+ .exp-item {
+     display: grid;
+     grid-template-columns: 220px 1fr;
+     gap: 0 4rem;
+     padding: 3rem 0;
+     border-bottom: 1px solid var(--line);
+     position: relative;
+ }
+
+ .exp-item:last-child {
+     border-bottom: none;
+ }
+
+ .exp-meta {
+     padding-top: .25rem;
+ }
+
+ .exp-date {
+     font-family: var(--mono);
+     font-size: 11px;
+     letter-spacing: .06em;
+     color: var(--gold-dim);
+     margin-bottom: .6rem;
+ }
+
+ .exp-company {
+     font-size: 13px;
+     color: var(--muted);
+     font-family: var(--mono);
+ }
+
+ .exp-body {}
+
+ .exp-role {
+     font-family: var(--display);
+     font-size: 1.8rem;
+     font-weight: 400;
+     letter-spacing: -.01em;
+     color: var(--text);
+     margin-bottom: 1rem;
+     line-height: 1.2;
+ }
+
+ .exp-desc {
+     font-size: 14px;
+     color: var(--muted);
+     line-height: 1.8;
+     margin-bottom: 1.2rem;
+ }
+
+ .exp-tags {
+     display: flex;
+     flex-wrap: wrap;
+     gap: .5rem;
+ }
+
+ .exp-tag {
+     font-family: var(--mono);
+     font-size: 10px;
+     letter-spacing: .1em;
+     text-transform: uppercase;
+     padding: .2rem .7rem;
+     background: var(--bg3);
+     color: var(--muted);
+     border-radius: 2px;
+ }
+
+ .exp-number {
+     position: absolute;
+     right: 0;
+     top: 3rem;
+     font-family: var(--display);
+     font-size: 4rem;
+     font-weight: 300;
+     color: var(--line);
+     line-height: 1;
+ }
 
 /* Experience and additional info */
 .experiences {
