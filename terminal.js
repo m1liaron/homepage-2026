@@ -5,6 +5,7 @@
   "use strict";
 
   const SECRET_TEXT = `You've probably seen that I've joined Binary Studio Academy twice, and yes, I failed twice make it to the project stage. But I haven't given up, so this summer I will push my limits to the edge to get that offer and join the Binary Studio team!`;
+  const rusorizURL = "https://send.monobank.ua/jar/2JbpBYkhMv";
     
   /* ── Anime quotes pool ── */
   const ANIME_QUOTES = [
@@ -109,6 +110,14 @@
       action: () => showQuote(),
     },
     {
+      id: "rusoriz",
+      icon: "💵",
+      label: "Rusoriz",
+      desc: "Sh....",
+      short: "Q",
+      action: () => showRusoriz(),
+    },
+    {
       id: "print",
       icon: "🖨️",
       label: "Print / Save CV",
@@ -132,7 +141,7 @@
       icon: "🕵️‍♀️",
       label: "Secret",
       desc: "Oh, secret...",
-      short: "E",
+      short: "S",
       action: () => showSecret(),
     },
   ];
@@ -318,6 +327,22 @@
       const res = getResult();
       tx.textContent = SECRET_TEXT;
       res.classList.add("visible");
+  }
+    
+  function showRusoriz() {
+      const tx = getResultTx();
+      const res = getResult();
+      const newUrl = document.createElement("a");
+      newUrl.href = rusorizURL;
+      newUrl.textContent = "Donate!!!!!";
+      res.classList.add("visible");
+
+    console.log([...tx.children])
+      if ([...tx.children].some(el => el.tagName === "A")) {
+          tx.querySelector("a").remove()
+      } else {
+          tx.append(newUrl);
+      }
   }
 
   function resetResult() {
