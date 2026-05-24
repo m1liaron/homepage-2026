@@ -581,8 +581,8 @@
       hint.textContent = "` to open terminal";
       document.body.appendChild(hint);
       setTimeout(() => (hint.style.opacity = "1"), 50);
-      setTimeout(() => (hint.style.opacity = "0"), 4000);
-      setTimeout(() => hint.remove(), 5000);
+      // setTimeout(() => (hint.style.opacity = "0"), 4000);
+      // setTimeout(() => hint.remove(), 5000);
       hint.addEventListener("click", open);
     }, 2200);
   }
