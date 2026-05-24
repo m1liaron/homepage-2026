@@ -39,7 +39,14 @@ document
   .querySelectorAll(".reveal, .reveal-left, .reveal-right")
   .forEach((el) => observer.observe(el));
 
-  // ── Skill bars ──
+// ── Scroll progress ──
+const prog = document.getElementById('progress');
+window.addEventListener('scroll', () => {
+  const p = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+  prog.style.width = (p * 100) + '%';
+}, { passive: true });
+
+// ── Skill bars ──
   const barObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -53,4 +60,20 @@ document
     });
   }, { threshold: .3 });
 
-  document.querySelectorAll('#skills').forEach(el => barObserver.observe(el));
+document.querySelectorAll('#skills').forEach(el => barObserver.observe(el));
+  
+
+  // ── Nav active state ──
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.style.color = link.getAttribute('href') === '#' + entry.target.id
+            ? 'var(--accent)' : '';
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -40% 0px' });
+  sections.forEach(s => navObserver.observe(s));
