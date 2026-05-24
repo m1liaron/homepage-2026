@@ -456,6 +456,13 @@
     document.addEventListener("keydown", (e) => {
       const ctrl = e.ctrlKey || e.metaKey;
 
+      const underlineButton = document.getElementById("terminal_underline");
+        
+        underlineButton.addEventListener("click", () => {
+            toggle();
+            return; 
+        });
+        
       if (
         e.key === "`" /* backtick */ ||
         (ctrl && e.key === "k") /* Cmd/Ctrl + K */ ||

@@ -1064,6 +1064,27 @@ section {
     display: none;
 }
 
+.underline {
+    height: 5px;
+    width: 50px;
+    background: var(--text);
+    animation: blink 2s ease-in-out infinite;
+    margin: auto;
+    cursor: pointer;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 /* Responsive */
 
 @media (max-width: 768px) {
