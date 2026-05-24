@@ -435,7 +435,6 @@ section {
 }
 
 .contact-info__item {
-    color: var(--secondary-text-color);
     text-decoration: none;
     display: flex;
     justify-content: start;
@@ -453,7 +452,7 @@ section {
 }
 
 .contact-info__item-icon path {
-    fill: var(--icon-color);
+    fill: var(--text);
 }
 
 .contact-info__item-icon {
@@ -467,7 +466,6 @@ section {
     height: 200px;
     object-fit: cover;
     border: 3px solid;
-    border-color: var(--text-decoration-color);
     animation: fade-up .8s .3s forwards;
 }
 
@@ -586,29 +584,22 @@ section {
     vertical-align: text-bottom;
 }
 
-.intro__icon path {
-    fill: var(--text-decoration-color);
-}
-
 .intro_text {
-    color: var(--secondary-text-color);
     text-align: justify;
 }
 
 .skills__header {
-    color: var(--secondary-text-color);
     text-align: center;
     margin-bottom: 15px;
 }
 
 .skills__text {
-    color: var(--secondary-text-color);
     text-align: justify;
 }
 
 /* Experience */
 
- ───────────────────────────── */ #experience {
+ #experience {
      background: var(--bg2);
  }
 
@@ -647,8 +638,6 @@ section {
      color: var(--muted);
      font-family: var(--mono);
  }
-
- .exp-body {}
 
  .exp-role {
      font-family: var(--display);
